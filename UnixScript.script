@@ -1,0 +1,14 @@
+#Prompting the user for the first argument in the command line, which is the path of the root directory they want to search for the file. 
+echo "Path: $1"
+
+#Prompting the user for the second argument in the command line, which is the form ID number of the file they want to retrieve. 
+echo "Form ID Number: $2"
+
+#For loop will go through every directory in the root directory that the path was given for.
+for DIRECTORY in $1/*
+	do
+		#The line below will run the java program in each directory in the root directory.  So it will search for the file with the given form ID number in all the directories.
+	    java FormNumberExtractor $DIRECTORY $2
+	done
+
+
